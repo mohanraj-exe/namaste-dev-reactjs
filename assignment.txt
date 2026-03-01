@@ -1,0 +1,159 @@
+// ASSIGNMENT:
+
+Chapter-01: Inception
+#1. What is Emmet?
+Emmet is a tool-kit for web developers that uses abbreviations to generate full HTML and CSS 
+code blocks rapidly, significantly speeding up coding workflow.
+
+Ex: Key Emmet Abbreviations and Operators
+1. ! - Generates HTML boilerplate
+Expanded HTML output - <!DOCTYPE html>...<meta charset="UTF-8">...
+
+2. > - Child element (nesting) 
+div>ul>li 
+
+<div>
+  <ul>
+    <li></li>
+  </ul>
+</div>
+
+3. + - Sibling element (Same level)
+div+p+bq
+<div></div>
+<p></p>
+<blockquote></blockquote>
+
+4. [] - Add attributes
+input[type=text autofocus]
+
+<input type="text" autofocus>
+</input>
+
+5. {} - Add text content
+a{Click here}
+<a href="">Click here</a>
+
+#2. What is the diff b/w javascript library and a framework in javascript?
+It is the concept of Inversion of Control (IoC)
+Your code calls the library's code, while the framework's code calls your code.
+
+Library:
+- Controlled by the developer.
+- You call library functions as needed.
+- Focuses on specific, narrow tasks (e.g., DOM manipulation, date formatting).
+- Highly flexible, can be used with other libraries or integrated into existing projects easily.
+- Generally lower, as you only need to learn specific functions and APIs.
+- Ex: React, jQuery, Lodash, Axios.
+
+Framework: 
+- Controlled by the framework.
+- The framework calls your code
+- Provides a comprehensive structure or "skeleton" for building an entire application 
+(e.g., handling architecture, routing, and state management).
+- Less flexible; often opinionated, requiring you to follow specific rules and conventions for organizing your code.
+- Learning curve: Typically steeper due to the need to understand its entire architecture and guidelines.
+- Ex: Angular, Vue.js, Express.js.
+
+#3. What is CDN?
+- A cdn is a geographically distributed group of servers that caches website content(images, videos,
+HTML, CSS) closer to end-users. By serving data from the nearest 'edge' server rather than a central 
+origin server, CDNs significantly increase website speed, reduce latency, lower bandwidth costs.
+
+How it works?
+- When a user requests a web page, the CDN maps the user's location and routes the request to the nearest
+edge server. If that server does not have the file, it fetches from the origin server, caches it, and
+serves it to the user. Common, popular CDN providers include CloudflareAkamai and Amazon CloudFront.
+
+#4. Why React is known as React?
+The UI reacts to changes in data. That is the core idea.
+
+Ex: without react.
+document.getElementById("count").innerText = count;
+
+You had to tell the browser: "Hey update this part".
+
+Ex: React's idea
+In react, you don't manually update the UI.
+You just change the state, and:
+The UI automatically reacts to the change.
+
+Ex:
+function Counter() {
+    const [count, setCount] = React.useState(0);
+
+    return (
+        <div>
+            <p>{count}</p>
+            <button onClick={() => setCount(count + 1)}>increase</button>
+        </div>
+    )
+}
+
+When setCount runs:
+- State changes.
+- Component re-renders.
+- UI updates automatically.
+
+The UI reacts to state changes.
+That's why it's called React.
+
+The core philosophy:
+React follows this principle:
+
+UI = f(state);
+Meaning:
+If state changes -> UI recalculates.
+Just like mathematical function.
+
+#5. What is cross-origin in react cdn links?
+Cross origin tells the browser how to requeset the resource from another origin.
+
+Ex:
+This script is coming from a different origin. Handle it using CORS rules.
+For loading external js files from different origin than the hosting web page. This
+allows the script to access resources from the server hosting
+the script, such as making HTTP requests or accessing data.
+
+#6. What is the difference between React and ReactDOM?
+React is the core Js library for building UI and managing component logic, while
+ReactDOM is a complementary, web-specific library that serves as the glue to actually render those 
+React components into the browser's real Document Object Model(DOM).
+
+React:
+- Creates UI components, manages state, and defines element structure and behaviour.
+- Focuses on the core logic of component-based architecture and the virtual DOM.
+- Platform agnostic - can be used for web, mobile (with React native), VR and other platforms.
+- Manages the Virtual DOM, performing comparisons(diffing) to identify necessary changes.
+
+ReactDOM:
+- Renders and efficiently updates React components in the actual browser DOM.
+- Provides specific methods like createRoot() and hydrateRoot() to interact with the web page's DOM.
+- Web-specific, it only works within a browser environment.
+- Takes the results of the virtual DOM diffing and applies only the minimal necessary changes to the real DOM.
+
+#7. What is difference between react.development.js and react.production.js files via CDN? 
+
+The core difference is that react.development.js is for development and debugging,
+while react.production.min.js is optimized for performance and size in a live environment. 
+
+Development: Includes helpful error messages, detailed warnings, 
+and is designed to work with React developer tools for easier troubleshooting. 
+The code is readable and often includes source maps.
+
+Production: Suppresses most warnings and provides only concise error 
+messages to prevent exposing 
+sensitive information to end-users and to avoid cluttering the console.
+
+#8. What is async and defer?
+These are boolean attributes
+
+The async and defer attributes on a <script> tag control how external JavaScript files are loaded and 
+executed, helping improve page performance by preventing unnecessary blocking of HTML parsing.
+
+- Both load scripts parallel to HTML parsing
+- async executes as soon as it loads (order not guaranteed)
+- defer executes after HTML parsing completes
+- async may run before DOM is ready
+- defer always runs after DOM is fully loaded
+This helps decide the right attribute based on script dependency and execution order.

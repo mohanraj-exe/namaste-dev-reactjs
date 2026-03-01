@@ -1,0 +1,152 @@
+<!-- NOTES: -->
+<!-- 1. Emmet: It basically generates code inside VS code. -->
+<!-- html:5 - It gives basic skeleton of html code -->
+
+<!-- Task 1: Create a basic html file that prints 'Hello world' in the browser screen -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste react</title>
+</head>
+
+<body>
+    <div id="root">
+        <h1>Hello world!</h1>
+    </div>
+</body>
+
+</html>
+
+<!-- Task 2: Use Js to print 'Hello world' in the browser screen -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste react</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script>
+        const heading = document.createElement("h1");
+        heading.innerHTML = "Hello world from Javascript!";
+
+        const root = document.getElementById("root");
+        root.appendChild(heading);
+
+    </script>
+</body>
+
+</html>
+
+<!-- NOTES: -->
+<!-- By default browser understands only Javascript by Js engine example 'V8 engine' by chrome,
+it does not react code. -->
+
+<!-- Task 3: Use reactJs cdn links to print 'Hello world' in the browser screen -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste react</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- It provides core react functions -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+    <!-- It provides core react dom functions, acts a bridge b/w react dom and the browser -->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
+        // 1. Creating a element is the core thing in react.
+        const heading = React.createElement("h1", {}, "Hello world from ReactJs!");
+
+        // 2. Creating a root and rendering inside it, it is the job of ReactDom.
+        // const root = ReactDOM.createRoot(document.getElementById("root"));
+
+        // root.render(heading);
+        
+    </script>
+</body>
+
+</html>
+
+<!-- Task 4: Use reactJs cdn links to print 'Hello world' in the browser screen, keep app.js as an
+external file -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste react</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- It provides core react functions -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+    <!-- It provides core react dom functions, acts a bridge b/w react dom and the browser -->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
+
+<!-- NOTES: -->
+<!-- ReactJs was built with a philosophy to manipulate DOM using Js, react gives superpowers to manipulate -->
+<!-- The most costly expensive work/operation in the browser or webpage is 'Manipulating DOM nodes' -->
+<!-- All the frameworks and libraries trying to optimize this costly operation including ReactJs -->
+
+<!-- Task 5: Discussed order of line of code and nested react elements -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css" />
+    <title>Namaste reactJs</title>
+</head>
+
+<body>
+    <h1 id="header">Hello top of root!</h1>
+    <div id="root">
+        <h1>Mohanraj S Developer is here!</h1> 
+        <!-- It shows the above one for a split second then it replaced with a created element by react from app.js file-->
+    </div>
+    <h1 id="footer">
+        Hello below of root!
+        <!-- header and footer id elements stays as it is, changes will be updated only in the root element 
+        (it can be any element, ex: h1 id="heading" ).
+        
+        That why we can call them as Library, it can function as an independent header, footer, side-bar etc. 
+        React can be implemented in an existing project as well -->
+
+    </h1> 
+
+    <!-- Order of code is important. -->
+    <!-- Placement/order of line of code is important, below cdn links necessary to run the app.js file because 
+    React functions written inside it -->
+    
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

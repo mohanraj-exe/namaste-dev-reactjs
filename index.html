@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css" />
+    <title>Namaste reactJs</title>
+</head>
+
+<body>
+    <h1 id="header">Hello top of root!</h1>
+    <div id="root">
+        <h1>Mohanraj S Developer is here!</h1> 
+        <!-- It shows the above one for a split second then it replaced with a created element by react from app.js file-->
+    </div>
+    <h1 id="footer">
+        Hello below of root!
+        <!-- header and footer id elements stays as it is, changes will be updated only in the root element 
+        (it can be any element, ex: h1 id="heading" ).
+        
+        That why we can call them as Library, it can function as an independent header, footer, side-bar etc. 
+        React can be implemented in an existing project as well -->
+
+    </h1> 
+
+    <!-- Order of code is important. -->
+    <!-- Placement/order of line of code is important, below cdn links necessary to run the app.js file because 
+    React functions written inside it -->
+    
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
