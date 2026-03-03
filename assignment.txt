@@ -1,0 +1,110 @@
+// ASSIGNMENT:
+
+Chapter-02: Igniting our app.
+#1. What is npm?
+It is a tool, CLI.
+node package manager is not a full form for npm.
+It hosts packages, developers can use it in their projects.
+Developer write a package and host it in a npm, other developers can use it. 
+It manages, installs and publish packages.
+
+#2. What is `Parcel/Webpack`? Why do we need it?
+Parcel is a bundler, that minifies, compress our project made it run locally in a port.
+It has a feature HMR, that compares the previous code and changes what essentially need to change.
+That can also build project production-ready. 
+
+#3. What is .parcel/cache?
+- Parcel/cache stores project files, it a user changes anything from project and saved, project is build again
+that is cached in parcel. In the next time user changes, parcel rebuilds what changed since last time.
+
+#4. What is `npx`?
+It is a command used for executing package.
+
+#5. What is difference between `dependencies` vs `devDependencies`?
+dependencies/packages can be used in both development and production. This makes development easier.
+devDependencies can be used be only in the development. In the production this dependencies
+will not download and install.
+
+#6. What is Tree Shaking?
+It is a feature/built-in support from parcel, that will make note of un-used code, that eliminates in production builds.
+Automatically removing unused code to reduce bundle sizes and improve performance.
+
+#7. What is Hot Module Replacement? 
+It is a feature, that allows update, add, remove to be reflected in the browser without full-page reload 
+using ctrl+R or browser refresh button.
+
+#8. 5 superpowers of Parcel and describe any 3 of them in your words?
+- Dev server
+- Hot reload
+- Diagnostics
+- Caching
+- Tree Shaking
+- Minification.
+
+1. Dev server - By using the command npx parcel index.html(entry point file)
+Development server will get started. It can also be configured to run as 'https'.
+
+2. Diagnostics - If a project throws error that will be highlighted by a good css in both the
+terminal and browser console. 
+
+3. Caching - If a dev builds for the first time. Consecutive builds will not takes all the file for bundling
+if any changes happened in a project, only the changes compared in the build by cache and updates it.
+This process helps unwanted rebuilding. 
+
+#9. What is `.gitignore`? What should we add and not add into it?
+It is a configuration file, it contains a list of file/folders that going to be ignored before
+pushing it to the github. 
+
+#10. What is the difference between `package.json` and `package-lock.json`?
+package.json it is a configuration file for npm. It keeps track of what version packages installed on our 
+system.
+
+package-lock.json it is generated and updated automatically by npm when installing or 
+updating packages. It is used to lock the exact versions of dependencies installed in the project.
+
+#11. Why should I not modify `package-lock.json`?
+This automatically generated file designed to maintain version of dependencies.
+Manually changing it can cause inconsistent builds and it break the project.
+It records precise versions of all direct and transitive dependencies.
+
+#12. What is `node_modules` ? Is it a good idea to push that on git?
+Node modules are the folders contains dependencies/packages that are installed, it can also 
+have dependencies of dependency.
+No it is not a good idea to push that on git, because that package/dependencies versions are
+listed in the package and package-lock.json, we can install them using json files in any systems.
+Also the folder size of node_modules is so huge.
+
+#13. What is the `dist` folder?
+It is the folder contains project build, minified versions of html, css and js files.
+If the command is 'npx parcel index.html' it is development build.
+If the command is 'npx parcel build index.html' it is a production build.
+
+#14. What is `browserlists`?
+It is a list with browser previous and current versions.
+It is configured in the project configuration file. a.k.a package.json. So that project can required 
+atleast specified versions to run it.
+
+#15. Webpack vs Parcel vs Vite:
+Webpack bundles everything before running the app.
+- Reads all files.
+- Builds dependency graph.
+- Bundles everything.
+- Then starts server.
+
+Parcel - No config needed. It auto-detects everything.
+Vite - Instead of bundling everything first. Native ES modules in the browser.
+When you start vite:
+- It does not bundle everything.
+- It serves files on demand.
+- Uses browser's native module system.
+
+#16. (^ - Caret and ~ tilde)
+When the symbol caret in prefix with the dependency version, minor versions of the series can be accepted by 'npm install'.
+When the symbol tilde in prefix with the dependency version, minor versions and major release versions of the series can also be accepted by 'npm install'.
+
+#17. Script types in html
+- text/javascript - This is the default MIME type for classic scripts and is supported by all 
+browsers. Modern HTML5 documents no longer require the type attribute for Javascript.
+
+- module - This value specifies that the script should be treated as a Javascript module, allowing for
+features like import and export.

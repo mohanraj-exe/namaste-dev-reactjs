@@ -1,0 +1,28 @@
+Package.json is a configuration file for npm. It keeps track of what version packages installed on our 
+system.
+
+npm install -D parcel
+D stands for Dev dependency.
+Dev dependency - Used in development phase
+Dependency - Used in production.
+
+^ caret - It can upgrade to minor upcoming versions automatically.
+~ tilde - It can upgrade to major upcoming versions automatically.
+
+Transitive dependency:
+Ex: Parcel dependency have its dependency, that dependency can have dependency like that it goes.
+
+Diff bw
+Package.json
+Package-lock.json
+
+npm command is used for installing some packages.
+npx command is used for executing any package. Ex: npx parcel index.html
+
+Preferred way of using react into our project by install via npm
+using cdn link is a costly operation, it loads scripts from network each time,
+if there is a change in the versions of it, we have to change them manually in the 
+script tag. When it installed via npm it recognises the minor upgrade versions and 
+installed automatically.
+
+Explore browserlist dependency in the github and website.

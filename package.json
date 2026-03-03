@@ -1,0 +1,21 @@
+{
+  "name": "02-igniting-our-app",
+  "version": "1.0.0",
+  "description": "Started working with dependencies",
+  "license": "ISC",
+  "author": "Mohanraj S",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "browserslist": "last 2 versions"
+}
