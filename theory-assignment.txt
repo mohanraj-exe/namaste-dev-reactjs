@@ -1,0 +1,57 @@
+ASSIGNMENT:
+
+#01. What is JSX?
+JSX: It is a Javascript syntax, which is easier to create HTML elements.
+It is a convention where we can combine HTML and Js together.
+JSX is not a part of react, JSX is not HTML inside Js.
+JSX is HTML-like or XML-like syntax
+JSX is just a syntax.
+We can write react for large-scale application without JSX also. 
+
+#02. React.createElement vs JSX:
+createElement it is a in-built method in React which accepts three arguments.
+    1. HTML tag which is going to create, 
+    2. attributes that is given to tag and 
+    3. the child element.
+ This method creates an object contains HTML element, child key-value these are ready 
+ to render it in the browser by ReactDOM.    
+ We can create entire application with the React.createElement with nested elements, but it is
+ painful in understanding and debugging code.   
+
+JSX - This syntax makes the code readable. JSX code is transpiled by babel to 
+React.createElement. Basically it digests the JSX code to React.createElement
+
+#03. Benefits of JSX:
+This syntax makes the code readable.
+Easier in understanding the DOM structure.
+
+#04. Behind the Scenes of JSX:
+JSX code is transpiled by babel to 
+React.createElement. Basically it digests the JSX code to React.createElement, it creates a
+Javascript object that has attributes of html tag and children element of that tag in a key-value pair.
+
+#05. Babel & parcel role in JSX:
+Babel is a transpiler that transforms JSX, HTML-like syntax to a React.createElement method/Function, this can be 
+understand by React.
+
+Parcel is like a manager that assigns the work to babel for getting job done when seeing JSX syntax code.
+Parcel is a package/dependency that has multiple dependencies, one such is Babel, that transpiles JSX.
+
+#06. Components:
+In React, a component is an independent, reusable building block of the UI.
+Key characteristics are:
+ - Reusability and Modularity
+ - Component composition.
+
+There are two primary ways to define components in React:
+Functional components
+Class components
+
+#07. Functional Components:
+It is a modern-way of writing code in react, with JSX.
+Using react-hooks like useState, useEffect. For managing state and
+side effects.
+
+Composing Components:
+Writing component inside another component is known as component composition.
+This helps code readable.

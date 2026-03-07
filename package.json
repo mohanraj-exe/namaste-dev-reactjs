@@ -1,0 +1,21 @@
+{
+  "name": "03-laying-the-foundation",
+  "version": "1.0.0",
+  "description": "Episode-03-Laying the foundation",
+  "license": "ISC",
+  "author": "Mohanraj S",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4",
+    "sharp": "^0.33.5"
+  }
+}

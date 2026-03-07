@@ -1,0 +1,20 @@
+#header {
+    color: red;
+}
+
+.header-component {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo,
+#user-icon {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.search-bar-container {
+    display: flex;
+    align-items: center;
+}
