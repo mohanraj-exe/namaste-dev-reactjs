@@ -1,0 +1,17 @@
+Topics covered:
+1. Mock designing for our food app.
+2. Writing css.
+3. Developing restaurant card component.
+4. Destructure the props.
+5. Config driven UI
+
+Props:
+Passing props to a component is like passing arguments to a function in Javascript.
+
+Note:
+When we are passing dynamic data to our component, we are passing as a prop.
+
+Config driven UI:
+Config is sent by backend.
+For ex: Take swiggy UI, which is same for all location, configuration from the backend is sent to UI to 
+set data dynamically based on locations.

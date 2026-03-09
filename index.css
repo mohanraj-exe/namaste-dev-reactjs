@@ -1,0 +1,41 @@
+body, h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffff00;
+
+}
+
+#logo {
+    width: 125px;
+    cursor: pointer;
+}
+
+.header > .nav-items {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.header > .nav-items > li {
+    padding: 0 30px;
+    font-size: 20px;
+}
