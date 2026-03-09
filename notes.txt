@@ -1,0 +1,111 @@
+Topics covered:
+1. React advantages.
+2. React file structure.
+3. Import/Export.
+4. Make our app Dynamic.
+5. React hooks.
+6. Diff algorithm, reconciliation aka react fiber.
+
+
+Best practise:
+1. Make a seperate file for every component.
+2. React does not recommend any folder structure, but in industry there is some 
+convention to maintain good folder structure based on either routes or features.
+3. Good practise to name the file as same as component name.
+Ex:
+components folder -> Header.js -> Inside it, Header component (React-functional component)  
+
+4. js or jsx file extension doesn't matter. Keep it simple use .js
+5. Harcoded data/url-link or mock-data should not keep in any components file.
+6. Create a utils/common/config folders in the root project.
+utils -> constants.js
+
+const CDN_URL = "https://xyz.com";
+const LOGO_URL = "https://xyz.com";
+
+utils -> mockData.js contains array mock data.
+
+There are two ways to import/export:
+1. Default export/import. Import name should be same as exported name. 
+
+export default Component;
+import Component from "path";
+
+2. Named export/import. 
+ - There should be only one default export in one file, multiple default exports are not possible
+in a single file.
+ - Multiple exports are possible with export and not included default keywords.
+ - Import name should be destructured. 
+
+export const Component;
+import { Component } from "path"; 
+
+# Task:
+Mix and match both type of exports to see how this works.
+
+7. Component - Lines of code < 100 
+Keep your component/file clean.
+
+#4. Make our app Dynamic.
+By adding button, giving attributes like 'onClick' that has a callback function. 
+
+Ex:
+<button onClick={() => console.log("Button clicked!")}>Filter top-rated restaurants</button>
+
+#5. React superpowers:
+React is efficient in DOM-manipulation.
+React tries to solve data and UI layer in-sync.
+React do faster DOM manipulation.
+
+// Normal Js 'let' variable
+let listOfRestaurants = [{...}, {...}, {...}];
+
+// React state variable
+React hooks - It is a normal Js utility function, react given to us. (It is pre-built) installed via 'react' package.
+
+Important hooks in react:
+useState() - Used to generate super powerful state variable.
+state variable - It maintains state of a variable.
+
+const [listOfRestaurants] = useState();
+When we call a function useState(), it receives a state with a variable name listOfRestaurants.
+
+const [listOfRestaurants] = useState([]);
+now listOfRestaurants has default value as an empty array.
+
+const [listOfRestaurants, setListOfRestaurants] = useState([]);
+setListOfRestaurants is a function used to update the list.
+
+Note: superpowerful useState variable 'listOfRestaurants' in-sync with the UI layer, when that variable
+gets updated.
+
+As soon as the variable gets changes, it will automatically refresh our component. 
+This is known as render.
+
+React official documentation:
+useState - def:
+Whenever a state variable updates, react re-renders the component.
+
+#6. What is Diff algorithm?
+It finds the difference bw two virtual DOMs.
+It finds the difference bw updated virtual DOM and previous virtual DOM.
+Basically virtual DOM is an object, finding out difference between Js objects are easy as compared
+with HTML elements, then it actually updates the DOM.
+
+ - What is a virtual DOM - It is a object representation of an actual DOM.
+   It is nothing but a normal Js object (React element).
+
+Note: 
+Ques: Why react is fast?
+Because it has virtual DOM, 
+It has Diff algorithm, which is very efficient.    
+It does efficient DOM manipulation.
+It can find out the diff and update the UI.
+
+React core algorithm: Finding out diff and updating UI is the best-part of React.
+
+Note: 
+We write it in any way we want.
+const arr = useState(resList);
+const listOfRestaurants = arr[0];
+const setListOfRestaurants = arr[1];
