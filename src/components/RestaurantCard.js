@@ -2,7 +2,7 @@ const RestaurantCard = ({ data }) => {
   console.log(data);
 
   return (
-    <div key={data.id} className="restaurant-card">
+    <div className="restaurant-card">
       <img
         id="restaurant-logo"
         alt="restaurant-logo"
