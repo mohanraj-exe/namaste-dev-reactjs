@@ -1,0 +1,97 @@
+#01. Is JSX mandatory for React?
+- No, JSX is not mandatory, we can create applications simply with plain javascript and
+React.createElement() function.
+
+Using JSX helps code readability and development experience.
+
+#02. Is ES6 mandatory for React?
+- No, ES6 is not mandatory for React. Before introduction of ES6, react code works with
+javascript ES5. 
+
+We can acheive everything with ES5 as writing with ES6. 
+ES6 introduces cleaner, more concise syntax, that makes code easier to read and maintain.
+
+#03. TitleComponent vs <TitleComponent/> vs <TitleComponent></TitleComponent> in JSX?
+1. TitleComponent - When we are writing as a functional component 
+in the name of 'TitleComponent' with JSX syntax.
+
+For proper usage of it, can be invoked by {TitleComponent()}, component gets rendered.
+
+ - TitleComponent - When it is a simple JSX, it transpiled to React.createElement({}) that returns a
+javascript object.
+
+2. <TitleComponent/> - This self-closing tag is used when the component has no child components.
+
+3. <TitleComponent></TitleComponent> - The opening and closing tags are specifically used
+when you need to include child components or elements between them.
+
+If the component has no children, <TitleComponent/> and <TitleComponent></TitleComponent> 
+are entirely equivalent.
+
+#04. How can I write comments in JSX?
+In JSX, comments should be wrapped in a curly braces. Telling a transpiler that 
+it is Js expression to be ignored.
+
+const element = (
+  <div>
+    <h1>Hello World</h1>
+
+    {/* This is a single-line comment */}
+
+    {/*
+      This is a multi-line comment.
+      It can span across several lines.
+    */}
+  </div>
+);
+
+#05. What is <React.Fragment></React.Fragment> and <></>?
+Both will add an invisible node to the DOM, Without adding unnecessary 
+<div> elements, it makes clean DOM and improves slighter performance.
+
+React.Fragment - can takes attribute especially key, when mapping over a collection of data
+render to a list of elements.
+
+<></> - Does not take any attributes, it is a short-hand syntax.
+
+#06. What is Virtual DOM?
+It is a Javascript representation of the actual DOM. 
+Used in react for faster rendering of changes.
+
+#07. What is Reconciliation in React?
+It is a process involves comparing an in-memory representation of the UI, called
+the Virtual DOM.
+Creating a new virtual DOM tree when data changes.
+Compares the old one (virtual DOM) and calculates what to be updated in the DOM.
+Also known as Diff algorithm.
+
+#08. What is a React Fiber?
+It is a powerhouse reimplementation of React's algorithm. 
+The goal of React Fiber is to increase its
+suitability for areas like animation, layout, and gestures. It's main feature is incremental
+rendering. The ability to split rendering work into chunks and spread it out 
+over multiple frames.
+
+#09. Why we need keys in React? When do we need keys in React?
+When a list of collection of data that needs to be rendered as a component. 
+Each component is identified by 'key' attribute provided by react.
+Which helps when identify and modifies the component.
+
+#10. Can we use index as keys in React?
+Index can be used. Least preference for it when compared with key. 
+When elements changed in between in an array(deleted/removed).
+
+Ex:
+0,1,2,3,4 suppose index 2 gets deleted.
+0,1,2,3 current length. 
+Previous and the following Index data is different now. 
+So react renders everything after index 2. Performance issue occurs when large amount of data is present.
+
+#11. What is props in React?
+It is an attribute in a component that passes data from the parent to a child component.
+
+#12. What is config driven UI?
+It is a UI that is built and configured using a declaration config file or data structure.
+
+Config is the data coming from the api which keeps on changing according to 
+different factors like user, location etc.
