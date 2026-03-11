@@ -1,0 +1,44 @@
+#01. What is the diff bw Named Export, Default export and * as export?
+In a single file contains multiple functions and variables that wants to export, we will use 
+Named export. 
+
+syntax:
+export const FunctionName() {};
+export const VariableName;
+export { FunctionName/Variable };
+import { FunctionName } from 'path';
+
+Default export/import:
+In a file, that wants to export one main function or Variable(thing), we can use Default export keyword.
+
+export * as:
+It is used when we want to re-export everything from another file under one name.
+
+utils.js:
+export const add = (a, b) => a + b;
+export const sub = (a, b) => a - b;
+
+index.js:
+export * as utils from "./utils";
+
+Meaning: It is like take everything from utils.js. Put it inside an object called "utils", Export that object.
+
+Importing it in another file.
+import { utils } from "./index";
+
+utils.add(2, 3);
+utils.sub(5, 1);
+
+Without export * as:
+import { add, sub } from "./utils";
+
+#02. What is the importance of config.js file?
+It helps in keeping the URL/any hardcoded code used in the project in a seperate file.
+
+#03. What are React Hooks?
+It is a normal Js utility function, react given to us. (It is pre-built) installed via 'react' package.
+
+#04. Why do we need a useState Hook?
+It generates and maintains state of a variable.
+Whenever there is a change in the state (this change can be done by second variable function)
+it re-renders the component.

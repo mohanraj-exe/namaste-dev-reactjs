@@ -1,11 +1,6 @@
-import {
-  AMBiriyani,
-  Dominos,
-  Kasthoori,
-  KFC,
-  McDonalds,
-  PizzaHut,
-} from "./urlLinks";
+import { url } from "./index";
+
+// console.log(url);
 
 export let restaurantList = [
   {
@@ -15,7 +10,7 @@ export let restaurantList = [
     areaName: "Central District",
     costForTwo: "₹400 for two",
     cuisines: ["Pizza", "Italian", "Fast food"],
-    image: KFC,
+    image: url.KFC,
     avgRating: 3.8,
     veg: false,
     deliveryTime: 30,
@@ -27,7 +22,7 @@ export let restaurantList = [
     areaName: "Central District",
     costForTwo: "₹450 for two",
     cuisines: ["Pizza", "Italian", "Fast food"],
-    image: Dominos,
+    image: url.Dominos,
     avgRating: 4.6,
     veg: false,
     deliveryTime: 30,
@@ -39,7 +34,7 @@ export let restaurantList = [
     areaName: "Central District",
     costForTwo: "₹360 for two",
     cuisines: ["Burger", "Italian", "Fast food"],
-    image: McDonalds,
+    image: url.McDonalds,
     avgRating: 4.1,
     veg: false,
     deliveryTime: 30,
@@ -51,7 +46,7 @@ export let restaurantList = [
     areaName: "Central District",
     costForTwo: "₹380 for two",
     cuisines: ["Pizza", "Italian", "Fast food"],
-    image: PizzaHut,
+    image: url.PizzaHut,
     avgRating: 3.7,
     veg: false,
     deliveryTime: 30,
@@ -63,7 +58,7 @@ export let restaurantList = [
     areaName: "Central District",
     costForTwo: "₹800 for two",
     cuisines: ["Biriyani", "Fast food"],
-    image: AMBiriyani,
+    image: url.AMBiriyani,
     avgRating: 4.7,
     veg: false,
     deliveryTime: 30,
@@ -75,7 +70,7 @@ export let restaurantList = [
     areaName: "Central District",
     costForTwo: "₹800 for two",
     cuisines: ["South-indian", "Fast food"],
-    image: Kasthoori,
+    image: url.Kasthoori,
     avgRating: 4.7,
     veg: false,
     deliveryTime: 30,
