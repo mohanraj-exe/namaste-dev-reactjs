@@ -1,0 +1,30 @@
+1. Monolith vs Micro-services
+
+
+#1. Monolith vs Micro-services:
+Traditionally web-apps are developed with Monolith.
+Ex:
+UI, DB, Backend, API, Email, SMS notification all these code in the same service it is known 
+as Monolith architecture.
+
+Micro-services: The above all are put them seperatedly.
+This is known as seperation of concern.
+It is known as single-responsibility principle.
+Each and every service has it's own job.
+Micro-services can have different programming languages.
+Each service run in different ports.
+
+Note: 
+There are two approaches how UI app/web app fetches data from the Backend. 
+1. When page loads -> fetch API (call) wait for say 500ms -> Data renders.
+2. When page loads -> Renders skeleton -> fetch API (call) -> Data renders.
+Second approach gives better user experience.
+
+Hook is just a normal Javascript utility function, react gives to us.
+It has it own specific use cases, where we use this function.
+ - Just like useState has its own specific use case.
+ - useEffect has its own.
+
+Note: 
+Implement conditional rendering.
+Whenever state variable updates, react triggers a reconciliation cycle(re-renders the component)
