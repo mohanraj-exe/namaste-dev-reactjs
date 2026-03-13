@@ -1,0 +1,40 @@
+Topics covered:
+1. useEffect - Dependency array
+2. React routes.
+
+
+
+1. useEffect - Dependency array:
+It is a utility function provided by react, it accepts two arguments. 
+ - A callback function,
+ - Dependency array(optional)
+Normally useEffect is called after rendering the component.
+Dependency array can change this behaviour.
+
+syntax:
+useEffect(() => {}, []);
+ - If Dependency array is empty, it is called only once after the component is rendered.
+ - If Dependency array is not present, it is called every rendering of the component.
+ - If Dependency array has state variable, it is called when every time the state variable is changed.
+
+Note: 
+Never declare react state variables inside a 'if/else', 'for loop', 'function'. 
+
+2. React routes:
+npm install react-router-dom@6 ('@' For installing specific versions)
+Whenever we have to develop routes, we have to write routing configuration.
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+createBrowserRouter is a configuration. It accepts an array of paths. Each path define what should
+happen on the path.
+
+const appRouter = createBrowserRouter([
+    { path: "/", element: <AppLayout /> },
+    { path: "/about", element: <AboutUs /> },
+]);
+
+root.render(<RouterProvider router={appRouter} />);
+
+Client side routing (CSR)
+Server side routing (SSR)
