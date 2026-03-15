@@ -1,7 +1,10 @@
 Topics covered:
 1. useEffect - Dependency array
 2. React routes.
-
+3. rafce in vs code - React arrow function with an 'export' default at the bottom.
+4. Children routes
+5. SPA - Single page applications
+6. useParams
 
 
 1. useEffect - Dependency array:
@@ -16,6 +19,10 @@ useEffect(() => {}, []);
  - If Dependency array is empty, it is called only once after the component is rendered.
  - If Dependency array is not present, it is called every rendering of the component.
  - If Dependency array has state variable, it is called when every time the state variable is changed.
+
+There are two approaches to load webpage.
+1. Page loads -> fetch call -> Rendering the UI.
+2. Page loads -> Component rendered -> fetch call -> Re-rendering the component.
 
 Note: 
 Never declare react state variables inside a 'if/else', 'for loop', 'function'. 
@@ -38,3 +45,7 @@ root.render(<RouterProvider router={appRouter} />);
 
 Client side routing (CSR)
 Server side routing (SSR)
+
+4. Children routes
+A parent route can have multiple Children routes.
+Imagine a child route wants to render, it replaces the outlet component in it's parent component.

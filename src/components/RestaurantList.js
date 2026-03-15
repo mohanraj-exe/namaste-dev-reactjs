@@ -6,7 +6,7 @@ const RestaurantList = ({ data }) => {
     <div className="restaurant-list">
       {/* Parent JSX element should contain key attribute while map */}
       {data?.map((restaurant) => (
-        <Link key={restaurant.id} to={"/restaurants/" + restaurant.name + restaurant.id}>
+        <Link key={restaurant.id} to={"/restaurants/" + restaurant.id}>
           <RestaurantCard data={restaurant} />
         </Link>
       ))}
