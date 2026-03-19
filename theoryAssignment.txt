@@ -1,0 +1,103 @@
+#01. What is a Microservice?
+A web or app server allocated/configured to do specific things in isolation.
+It is connected/invoked by external API calls to it.
+
+Example: 
+For UI -> Put ReactJs code/Front-end code in a seperate server, running in one port.
+For Backend -> NodeJs running in a different server, running in a different port.
+
+#02. What is Monolith architecture?
+It is a traditional software development model, one application that contains all modules 
+in it and act as a single unit.
+
+Example: UI, Backend, Data access share a single codebase, database and
+memory space. Making it simpler to develop and deploy initially but harder
+to scale and modify as it grows.
+
+#03. What is the difference between Monolith and Microservice?
+Monolith, single code base which contains all layers of process,
+easy to develop and deploy initially but harder to scale and modify as it grows.
+
+Microservices, each module of large application is splitted and seperated in
+each services are maintainable, testable, scalable.
+
+#04. Why do we need a useEffect Hook?
+A hook is a React functional component utility function.
+useEffect is one such function.
+
+For any side effects/async operations like fetching data, Updating DOM, Timers 
+that to happen after rendering/mounting a component, we can use useEffect hook to do it.
+
+#05. What is Optional Chaining?
+It is a safe way to access nested object properties, array elements or call functions 
+when there is a possibility that an intermediate reference might be null or undefined.
+If any part of the chain is nullish, the expression short-circuits and return 
+undefined instead of throwing a TypeError.
+
+syntax: ?.
+
+1. Property access: obj?.prop
+const customer = { name: "John", details: { age: 25 } };
+console.log(customer.details?.address?.city); // undefined (Instead of an error)
+
+If customer.details exists it can access address, it checks address again if it 
+exists or not, it can access city property. But address is not exists.
+It will not even access the property city.
+
+2. Calling Optional methods: Safely calls a method only if it is defined
+const settings = { onSave: () => console.log("Saved!") };
+
+settings.onSave?.(); // "Saved!"
+settings.onCancel?.(); // undefined (Instead of an error)
+
+3. const playlist = { songs: ["Intro", "Moonlight"] };
+const secondSong = playlist.songs?.[1]; // "Moonlight"
+const firstSong = playlist.tracks?.[0]; // undefined
+
+#06. What is Shimmer UI?
+It is a dummy placeholder card or page, designed to show it in the UI until page 
+loads content.
+
+#07. What is the difference between JS expression and JS statement?
+Any integer value, any Js data type like null, undefined, boolean
+and any mathematical operators placed between two integers, it is known as Js expression.
+Ex: 2, null, undefined, true, !false, 2 + 2
+
+Js statement:
+An Js expression assigned to a variable that line of code ends with a semi-colon is known
+as Js statement.
+Ex: const add = 2 + 2;
+const calculate = 2 + ((4 - 3) + 5)/2;
+
+#07. What is Conditional Rendering, explain with a code example?
+It is like a if/else statement, based on statisfying condition component gets rendered.
+
+{isLoading} ? <Shimmer /> : 
+return (
+    <AppComponent />
+);
+
+#08. What is CORS?
+Cross-Origin Resource Sharing is a protocol or a HTTP-header-based mechanism
+that allows a server to securely permit resources(like APIs) to be accessed 
+from a different domain or origin.
+
+HTTP-Header Based: It operates by exchanging specific HTTP headers (Access-Control-Allow-Origin, etc.) 
+between a browser and a server.
+
+Note: CORS does not protect a server from malicious attacks, 
+but rather provides a way for a server to communicate to the browser
+which third-party domains are trusted.
+
+#09. What is async and await?
+'async' keyword adding prefix to a function makes it asynchronous.
+It returns a 'fulfilled' promise.
+
+'await' keyword in the line of code it pauses and Js puts them in micro-task queue.
+It can be a API call.
+when API response occurs 'await' resolves the promise. Returning value and state.
+
+#10. What is the use of `const json = await data.json();` in getRestaurants()?
+'data' variable holds the API response that will parsed the body text as JSON
+by introducing json method to it, and this is a asynchronous operation, 
+it returns a promise because reading and parsing the data can take time.
