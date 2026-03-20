@@ -16,21 +16,25 @@ const RestaurantMenu = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      const json = jsonData;
-      // console.log(json);
-
-      const [restaurant] = json.filter((menu) => menu.id == resId);
-      // console.log(restaurant);
-
-      setResTitle(restaurant?.cards[0].card?.card?.text);
-
-      const [result] = restaurant?.cards?.filter((card) => card?.groupedCard);
-      const menu = result?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
-        (card) => card?.card?.card?.itemCards,
-      );
-      // console.log(menu);
-
-      setGroupedMenu(menu);
+      try {
+        const json = jsonData;
+        // console.log(json);
+        
+        const [restaurant] = json.filter((menu) => menu.id == resId);
+        // console.log(restaurant);
+        
+        setResTitle(restaurant?.cards[0].card?.card?.text);
+        
+        const [result] = restaurant?.cards?.filter((card) => card?.groupedCard);
+        const menu = result?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
+          (card) => card?.card?.card?.itemCards,
+        );
+        // console.log(menu);
+        
+        setGroupedMenu(menu);
+      } catch (err) {
+        console.error(`An error has occurred: ${err.message}`);
+      }
     });
   }, []);
 

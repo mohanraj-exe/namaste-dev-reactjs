@@ -1,0 +1,42 @@
+#01. What are various ways to add images into our App? Explain with code examples
+
+1. Importing them as 'modules', By placing images in the 'src' folder.
+Place the image file inside the src directory.
+Eg: src/assets/images/my-image.png
+
+Import it in your component using a relative path:
+import myImage from './assets/images/my-image.png';
+
+Use the imported variable in your JSX:
+<img src={myImage} alt="Description />
+
+2. Using the public folder:
+Place the image file inside the public directory.(e.g., public/images/logo.png).
+Reference it using an absolute path from the root of our application in the src attribute:
+
+No import needed for this:
+<img src="/images/logo.png" alt="Description" />
+
+3. Using External URLs: We can host images on a Content Delivery Network (CDN) 
+or external server and link to them directly.
+Simply provide the full URL in the src attribute:
+
+<img src="https://example.com" alt="Description" />
+
+#02. What would happen if we do console.log(useState())?
+It prints an array. First index accepts a 'state variable' it can be any Js data type 
+and a second index can accepts a setter function.
+
+#03. How will useEffect behave if we don't add a dependency array ?
+When dependency array is not add, for every rendering of that component useEffect will be triggered.
+
+#04. What is SPA?
+SPA - Single Page Application, where all components/JSX in the application is bundled into a single html file.
+that has single html page DOM nodes.
+Where content gets changed/Navigation happens without full page reload.
+
+#05. What is Client Side Routing(CSR) and Server Side Routing(SSR)?
+When SPA loads the whole single page. Client side routing is a navigation technique to navigates between
+components without requesting html page from the server.
+
+In Server Side Routing, Every URL request goes to server -> Server returns a new HTML page.

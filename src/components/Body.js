@@ -29,18 +29,21 @@ const Body = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      const [json] = jsonData;
-      // console.log(json);
+      try {
+        const [json] = jsonData;
+        // console.log(json);
 
-      const restaurants =
-        json?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants?.map(
-          (res) => res.info,
-        );
-      // console.log(restaurants);
+        const restaurants =
+          json?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants?.map(
+            (res) => res.info,
+          );
+        // console.log(restaurants);
 
-      setRestaurantState(restaurants);
-      setFilteredRestaurantState(restaurants);
-      
+        setRestaurantState(restaurants);
+        setFilteredRestaurantState(restaurants);
+      } catch (err) {
+        console.error(`An error has occurred: ${err.message}`);
+      }
     }, 350);
   }, []);
 

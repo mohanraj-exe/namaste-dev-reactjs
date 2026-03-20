@@ -1,13 +1,25 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
-const logo = new URL("../../assets/logo-2.png?as=webp", import.meta.url);
+import logo from "url:../assets/images/logo.png";
 
 const Header = () => {
+  const [login, setLogin] = useState(false);
+
+  console.log(logo, typeof(logo));
+
+  // useEffect(() => {
+  //   debugger;
+  // }, []);
+
+  // debugger;
+
+  console.log(useState());
+  
   return (
     <div className="header">
       <span className="logo-title">
         <Link to={"/"}>
-          <img id="logo" alt="logo" src={logo} />
+          <img src={logo} id="logo" alt="logo" />
         </Link>
         <h2>Food order app</h2>
       </span>
@@ -23,6 +35,16 @@ const Header = () => {
           <Link to={"/contactus"}>Contact us</Link>
         </li>
         <li>Cart</li>
+
+        <li>
+          <button
+            onClick={() => {
+              setLogin(!login);
+            }}
+          >
+            {!login ? "Login" : "Logout"}
+          </button>
+        </li>
       </ul>
     </div>
   );
