@@ -1,0 +1,112 @@
+#01. How do you create Nested Routes react-router-dom cofiguration?
+
+npm i react-router
+
+Create a router and pass it to RouterProvider:
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter } from "react-router";
+import { RouterProvider } from "react-router/dom";
+
+const router = createBrowserRouter([
+    {
+        path: "/",
+        Component: Root,
+        children: [
+            { index: true, Component: Home },
+            { path: "about", Component: About },
+            {
+                path: "auth",
+                Component: AuthLayout,
+                children: [
+                    { path: "login", Component: Login },
+                    { path: "register", Component: Register },
+                ]
+            },
+            { path: "concerts",
+              children: [
+                { index: true, Component: ConcertsHome },
+                { path: ":city", Component: ConcertsCity },
+                { path: "trending", Component: ConcertsTrending }
+            ] 
+            }
+        ]
+    }
+])
+
+const root = document.getElementById("root");
+
+ReactDOM.createRoot(root).render(
+    <RouterProvider router={router} />
+);
+
+------------------------------------------
+#03. What is the order of life cycle method calls in Class Based Components?
+
+1. constructor function
+2. calling super function to initializes parent's constructor.
+3. render method. (Mandatory)
+4. React DOM (return JSX from the render method)
+5. componentDidMount(){}
+6. componentDidUpdate(){}
+7. componentWillUnmount(){}
+
+--------------------------------------------
+#04. Why do we use componentDidMount?
+After initial rendering/mounting a component to the UI(i.e, DOM)
+we atleast showed something on the UI to the user,
+now background API calls, timers, subscriptions or any
+asynchronous operations to happen, we put them inside it.
+
+After successful completion of the function, we can set the state
+it re-render the component, updates will be reflected 
+in the UI.
+
+-----------------------------------------------
+#05. Why do we use componentWillUnmount? Show with example
+We use this function to clearup any function that needs to
+be end, before unmounting a component.
+This prevents memory leak, affects app performance.
+
+// App.js
+this.state = {
+    status: true
+};
+
+<button onClick={() => this.setState({ status: !this.state.status })}>
+Toggle timer
+</button>
+
+{this.state.status && (<One data={this.state.one} />) }
+
+// One.js
+componentDidMount() {
+    console.log("Mounted!");
+    this.timer = setInterval(() => {
+    console.log("Running...");
+    }, 1000);
+}
+
+componentWillUnmount() {
+    clearInterval(this.timer);
+    console.log("Unmounted");
+}
+
+-----------------------------------------------
+#06. Why do we use super(props) in constructor?
+
+super(props) is not Mandatory in modern react code.
+Whenever we use constructor for writing customize initial
+values in the component/class. We must use super() to initializes
+parent component (React.component) constructor function.
+This setup initial values and state in the constructor function.
+
+-----------------------------------------------
+#07. Why can't we have the callback function of useEffect async?
+useEffect hook callback function designed to return
+nothing (undefined) or
+cleanup function.
+
+However async function can be written inside the hook,
+that is declared and called inside it.
