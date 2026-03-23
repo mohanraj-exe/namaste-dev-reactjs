@@ -1,0 +1,96 @@
+Functional component in react:
+It is a normal javascript function that returns a piece of JSX.
+
+Class-based component in react:
+It is a normal Js class that has a render method that returns a piece of JSX.
+
+React.component is a class given by react
+It can imported by 
+
+import React from "react";
+
+class UserClass extends React.Component {
+    render(){
+        return (
+            <>
+            </>
+        )
+    }
+}
+
+class App extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      one: 1,
+    };
+
+    render() {
+        return (
+            <div>
+            
+            </div>
+        )
+    }
+
+  }
+}
+
+1. using extends keyword:
+"App component keyword inherits features from React.component"
+
+Why needed?
+Because React.component gives us:
+ - this.state
+ - this.setState()
+ - lifecycle methods
+ - render() system
+
+2. need of constructor()
+It runs when component is created.
+ - Used for initializing state.
+ - Binding methods.
+
+3. super(props)
+calls the parent class constructor(React.Component)
+it initializes with props, state, refs, updater etc.
+
+Why super is required:
+Js rule: You cannot use "this" before calling super();
+
+Ex: 
+Pure Js
+Rule: If you extend a class -> you must call super()
+class Parent{
+    constructor(name){
+        this.name = name;
+    }
+}
+
+class Child extends Parent{
+    constructor(name){
+        super(name); // it calls the Parent constructor's function.
+        console.log(this.name);
+    }
+}
+
+Note:
+this -> created by Javascript.
+
+super(props) -> calls React.component constructor
+sets up props, state, internals
+
+constructor -> your custom logic afte React setup.
+
+In short:
+extends -> inherits
+super -> activate parent
+constructor -> customize
+
+Note:
+We don't need constructor unless we want custom setup.
+If using constructor, we must call super(), that 
+initializes(1. Create properties on this, 2. Assign initial values 3. Make them usable) 
+React.component
+and enables this.props and this.state
