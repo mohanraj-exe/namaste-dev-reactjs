@@ -1,0 +1,51 @@
+import {
+  MENU_ITEMS_IMAGE_URL,
+} from "../utils/constants";
+import ShimmerUI from "./ShimmerUI";
+
+// Hooks
+import useRestaurantMenu from "../utils/useRestaurantMenu";
+
+const RestaurantMenu = () => {
+  const { resTitle, groupedMenu } = useRestaurantMenu();
+
+  return groupedMenu?.length === 0 ? <ShimmerUI /> : (
+    <div className="restaurant-menu">
+      <h1 id="title">{resTitle}</h1>
+
+      {groupedMenu?.map((group) => (
+        <div key={group.card.card.categoryId} className="grouped-menu-card">
+          {/* title */}
+          <h2 id="card-title">{group.card.card.title} ({group.card.card.itemCards.length})</h2>
+
+          {/* card */}
+            {group.card.card.itemCards?.map((item) => (
+              <div key={item.card.info.id} className="food-item">
+
+                {/* left */}
+                <span className="left">
+                  <h3>{item.card.info.name}</h3>
+                  <h4>
+                    Rs.
+                    {item.card.info.price / 100 ||
+                      item.card.info.defaultPrice / 100}
+                  </h4>
+                  <p>
+                    Rating: {item.card.info.ratings.aggregatedRating.rating || ""} (
+                    {item.card.info.ratings.aggregatedRating.ratingCountV2})
+                  </p>
+                  <p>{item.card.info.description}</p>
+                </span>
+
+                {/* Right */}
+                <img src={(MENU_ITEMS_IMAGE_URL + item.card.info.imageId) || ""} />
+              </div>
+            ))}
+
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default RestaurantMenu;
