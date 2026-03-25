@@ -1,7 +1,6 @@
 import { lazy, Suspense } from "react";
 import Header from "./src/components/Header";
 import Body from "./src/components/Body";
-import About from "./src/components/About";
 import "./index.css";
 
 import ReactDOM from "react-dom/client";
@@ -12,10 +11,11 @@ import RestaurantMenu from "./src/components/RestaurantMenu";
 import ShimmerUI from "./src/components/ShimmerUI";
 
 const Grocery = lazy(() => delayForGrocery(import("./src/components/Grocery")));
+const About = lazy(() => delayForGrocery(import("./src/components/About")));
 
 const delayForGrocery = (promise) => {
-  return new Promise(resolve => {
-    setTimeout(() => resolve(promise), 500)
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(promise), 500);
   }).then(() => promise);
 };
 
@@ -40,7 +40,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense fallback={<ShimmerUI />}>
+            <About />
+          </Suspense>
+        ),
       },
       {
         path: "/contactus",
