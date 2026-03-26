@@ -1,0 +1,56 @@
+#01. When and why do we need lazy()?
+We need lazy function from react when application grows larger. 
+When application grows larger bundling takes time when moves to production,
+When site loads resource download by the browser is larger and takes time to finish it, because larger
+bundle given by the server to the browser.
+
+In order to speed up site loads, we need to small bundles of resource, 'lazy' loads the bundle on-demand
+which means, initial load of site it will not load all resources. When clicking/loading specific components/page by 
+the user that configured bundle gets downloaded and cached, this smaller chunks of bundle loads on-demand and
+the sub-sequent loading of components will not take same amount of time.
+This makes application feels lighter and faster. 
+
+#02. What is suspense?
+Suspense is a component(given by react it is a react function), wrapping the lazy component,
+when loading bundled resource which is an asynchronous function,
+when it is in the process, user can show something in the UI that is 'loading' for better 
+user experience, it has an attribute 'fallback' accepts a react element. 
+
+#03. Why we got this error : A component suspended while responding to
+synchronous input. This will cause the UI to be replaced with a loading indicator.
+To fix, updates that suspend should be wrapped with startTransition? How does
+suspense fix this error?
+
+This error is thrown when user input is synchronous(ex. input field) and when based on the
+input when it wants show an lazy loading component. It throws an error.
+Because the input is synchronous and react nature is UI in-sync with state. Input is synchronous and
+lazy loading component is asynchronous. That's why this error occurs. In modern react, this error not even
+shown. React silences this error, not showing any value in the UI.
+
+To prevent this behaviour, lazy loading component should be wrapped in a Suspense component with a fallback
+attribute or setTransition method, this will load the component in background.
+
+#04. Advantages and disadvantages of using this code splitting pattern?
+ Advantages:
+ - Improved Initial Load Times
+ - Better Performance and User Experience
+ - Efficient Resource Usage
+ - Optimized Caching
+ - Better Code Management
+
+ Disadvantages:
+ - Increased Complexity
+ - Requires Fallback UI
+
+#05. When do we and why do we need suspense?
+When:
+Data Fetching: When waiting for data from an API to load before rendering a component.
+Lazy Loading Components: When breaking down applications into smaller chunks to
+improve performance, loading them only when needed.
+
+Why:
+Improved User Experience: Replaces broken or empty states with engaging 
+loading indicators or skeleton screens.
+
+Declarative Loading States: Simplifies code by defining fallback UI at a higher level, 
+removing the need for manual if (loading) checks in every component.

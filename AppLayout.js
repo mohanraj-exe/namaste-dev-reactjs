@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import Header from "./src/components/Header";
 import Body from "./src/components/Body";
+// import About from "./src/components/About";
 import "./index.css";
 
 import ReactDOM from "react-dom/client";
@@ -10,9 +11,11 @@ import Error from "./src/components/Error";
 import RestaurantMenu from "./src/components/RestaurantMenu";
 import ShimmerUI from "./src/components/ShimmerUI";
 
+// Lazy loading components
 const Grocery = lazy(() => delayForGrocery(import("./src/components/Grocery")));
-const About = lazy(() => delayForGrocery(import("./src/components/About")));
+const About = lazy(() => import("./src/components/About"));
 
+// For Demo purpose - Intentional delay.
 const delayForGrocery = (promise) => {
   return new Promise((resolve) => {
     setTimeout(() => resolve(promise), 500);
