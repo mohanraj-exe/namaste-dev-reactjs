@@ -1,0 +1,24 @@
+Topics covered:
+1. Higher order components.
+2. Pure functions.
+3. Filter function and building accordion.
+4. React dev tools
+5. Controlled vs uncontrolled components.
+6. Props drilling
+7. React context
+
+1. Higher order components:
+It takes a component and returns a component.
+It takes a component as input enhances it and it returns.
+It is like an enhancer.
+
+2. Pure functions:
+A function that returns same output for the same inputs.
+It will not directly modify the given input state values, instead they return a new value or object. 
+
+7. React context:
+When the case of accessing context data from anywhere in the app.
+
+We don't need props anymore? 
+No, we can use props, when the data wants in one or two deeper levels to the child components from
+the parent. When the data is needed all over or more deeper levels of component. We can go for 'context'.
