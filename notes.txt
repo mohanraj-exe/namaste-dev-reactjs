@@ -1,0 +1,24 @@
+Topics covered:
+1. React-redux - It is a bridge between react and redux.
+2. Redux-toolkit - Modern and simplifies the older way of writing redux code. It is the standard
+of way writing redux now.
+
+3. Redux store- It is a very big js object, with a lot of data inside it, acts as central store.
+4. Slice - It is one portion of a redux store. Assume logical partitions are slices.
+
+Ex: Scenerio - Add items to the cart.
+ - User clicks a 'Add' button.
+ - Dispatches an action.
+ - It calls the reducer function.
+ - The function updates the 'cart' slice of redux store.
+
+To read the updated count of cart slice, we use 'selector', this phenomenon is known as subscribing
+to the store.
+
+Steps involved:
+ - Install @reactjs/toolkit and react-redux
+ - Build our store.
+ - Connect our store to app.
+ - Slice
+ - Dispatch(action)
+ - Selector
