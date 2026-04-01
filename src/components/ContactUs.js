@@ -3,12 +3,14 @@ import UserContext from "../utils/userContext";
 
 const ContactUs = () => {
   const { loggedInUser } = useContext(UserContext);
-  console.log(loggedInUser);
+  // console.log(loggedInUser);
   
   return (
-    <div className="contact-us">
+    <div className="body contact-us">
       <h2>Contact Us</h2>
-      <h2>{loggedInUser}</h2>
+      <hr />
+      <h4>Signed In user: {loggedInUser}</h4>
+      <hr />
       <p>
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim

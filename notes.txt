@@ -22,3 +22,26 @@ Steps involved:
  - Slice
  - Dispatch(action)
  - Selector
+
+Redux is doing immutable things behind the scenes
+But we actually doing directly mutating the state.
+Immer is a library takes care of things.
+ - Passing original state.
+ - Comparing original with the user given input.
+ - Gives an pure function output.
+
+Ex: originalState = {items: ["pizza"]};
+clearCart: (state, action) => {
+when it is directly mutating like this,
+    state = []; // state is block scope here.
+    state.items.length = 0; // It is the proper way of mutating.
+}
+
+// RTK - says either mutate the existing state, or return a new state.
+state.items.length = 0; // originalState = []
+ (or)
+return { items: [] }; // this new object will be replaced inside originalState = { items: [] }
+
+// Assignment:
+ - Explore older way of writing Redux query using Redux Thunk and middlewares.
+ - Explore the new way also RTK query.

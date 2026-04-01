@@ -12,18 +12,18 @@ const RestaurantMenu = () => {
   return groupedMenu?.length === 0 ? (
     <ShimmerUI />
   ) : (
-    <div className="restaurant-menu">
-      <h1 id="title">{resTitle}</h1>
+      <div className="body restaurant-menu">
+        <h1 id="title">{resTitle}</h1>
 
-      {groupedMenu?.map((group, index) => (
-        <RestaurantGroupedMenu
-          key={group.card.card.categoryId}
-          data={group}
-          isActive={activeIndex === index}
-          onShow={() => setActiveIndex(index)}
-        />
-      ))}
-    </div>
+        {groupedMenu?.map((group, index) => (
+          <RestaurantGroupedMenu
+            key={group.card.card.categoryId}
+            data={group}
+            isActive={activeIndex === index}
+            onShow={() => setActiveIndex(index)}
+          />
+        ))}
+      </div>
   );
 };
 

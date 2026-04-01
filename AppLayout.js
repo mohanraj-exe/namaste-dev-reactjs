@@ -13,6 +13,7 @@ import ShimmerUI from "./src/components/ShimmerUI";
 import UserContext from "./src/utils/userContext";
 import { Provider } from "react-redux";
 import appStore from "./src/utils/appStore";
+import Cart from "./src/components/Cart";
 
 // Lazy loading components
 const Grocery = lazy(() => delayForGrocery(import("./src/components/Grocery")));
@@ -84,6 +85,10 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
+      {
+        path: "/cart",
+        element: <Cart />
+      }
     ],
   },
 ]);

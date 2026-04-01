@@ -9,8 +9,8 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
   const { loggedInUser } = useContext(UserContext);
   const cartItems = useSelector((store) => store?.cart?.items);
-  console.log(cartItems);
-  
+  // console.log(cartItems);
+
   return (
     <div className="header">
       <span className="logo-title">
@@ -21,7 +21,7 @@ const Header = () => {
       </span>
 
       <span className="online-status">
-        <h5>Online status: {onlineStatus ? "🟢" : "🛑"}</h5> 
+        <h5>Online status: {onlineStatus ? "🟢" : "🛑"}</h5>
       </span>
 
       <ul className="nav-items">
@@ -38,7 +38,14 @@ const Header = () => {
           <Link to={"/grocery"}>Grocery</Link>
         </li>
 
-        <li><h5>Cart ({cartItems?.length})</h5></li>
+        <li>
+          <h5>
+
+          <Link to={"/cart"}>
+            Cart ({cartItems?.length})
+          </Link>
+          </h5>
+        </li>
         <li>{loggedInUser}</li>
       </ul>
     </div>

@@ -1,11 +1,11 @@
-import { useContext } from "react";
 import { IMAGE_BASE_URL } from "../utils/constants";
-import UserContext from "../utils/userContext";
+// import { useContext } from "react";
+// import UserContext from "../utils/userContext";
 
 const RestaurantCard = (props) => {
   // console.log(BASE_URL + props?.cloudinaryImageId);
   // console.log(props);
-  const { loggedInUser } = useContext(UserContext);
+  // const { loggedInUser } = useContext(UserContext);
   // console.log(loggedInUser);
 
   return (
@@ -29,9 +29,10 @@ const RestaurantCard = (props) => {
       <div className="card-footer">
         <p className="cuisines">{props.cuisines?.join(", ")}</p>
         <p>{props.areaName}</p>
-        <p>user: {loggedInUser}</p>
+
+        {/* Demo feature - Displaying context value */}
+        {/* <p>user: {loggedInUser}</p> */}
       </div>
-    
     </div>
   );
 };
