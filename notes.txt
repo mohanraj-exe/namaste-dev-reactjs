@@ -1,0 +1,97 @@
+Topics covered:
+1. Testing - Types of testing.
+ - In this class testing covered on developer's perspective.
+
+Note: When introducing a line of code, it can introduce a bug anywhere in your application. 
+
+Developer can do two types of testing.
+ - Manual
+ - Write code of testing. 
+
+Manual Testing:
+ - Testing features manually by the developer. Ex: type in the search input feature to check
+ it is properly filtering.
+ 
+Developer testing:
+Developer can do three types of testing by writing code.
+
+ - Unit testing.
+ - Integration testing.
+ - End to end testing.
+
+Unit testing - One unit of our whole application or one unit of your 'React' application.
+Testing our react components in isolation.
+ - Ex: Testing my 'Header' component alone. 
+
+Integration testing:
+Testing all components or functions that involved in a specific feature of our application.
+ - Ex: Typing in a input search field and click 'search'. It will retrive all matching items.
+ This functionality involved:
+ - Input field
+ - Managing state in a component of typed field.
+ - Any re-rendering issues while typing.
+ - If API call involved, after clicking search button. We should test that feature too.
+ - Testing API response, updating state after API response and re-rendering.
+
+End-to-End testing:
+From user landing on the site until leaves the site.
+
+Note: Testing is a part of development.
+
+We'll focus on the first two alone.
+ 1. Unit testing.
+ 2. Integration testing.
+
+React Testing Library - It is the standard Library for testing react application.
+It is build on top of 'DOM testing library'.
+'Jest' is a library for testing javascript
+
+DOM testing library - It is the base of all other testing libraries.
+React testing library - It is a wrapper around DOM testing library. It adds more React features into it, to
+test React components.
+
+Framework/library hierarchy:
+ 01. Jest- It is a library for testing javascript.
+ 02. DOM testing library
+ 03. React Testing Library- It is a wrapper around DOM testing library. It adds more React features into it, to
+test React components.
+
+React/DOM Testing library uses 'Jest' behind the scenes.
+
+Important: We need React and Jest testing library into our application.
+
+Setting up Testing in our app:
+ - Install React testing library.
+ - Install Jest.
+ - Install Babel dependencies, required when using JEST with Babel.
+ - Configure Babel - This configuration(babel.config.js) conflicts with existing parcel's babel.
+ - Configure Parcel (.parcelrc) config file to disable default babel transpilation.
+ To get this configuration, go to -> Parcel website -> Javascript -> Usage with other tools.
+ After configuration, it will use 'babel.config.js' babel's configuration without conflict. 
+
+ - Executing jest - npm init jest@latest
+ It asks few questions, jsdom(browser-like) to install?
+ It needs to test 'DOM' in a jsdom environment(kind of virtual browser environment), not in an actual browser.
+
+ - For installing jest environment dom: npm install --save-dev jest-environment-jsdom
+ - Install @babel/preset-react - to make JSX work in test cases.
+ - Include @babel/preset-react inside my babel configuration(babel.config.js).
+ preset-react, This helps in converting JSX into HTML.
+ - Install @testing-library/jest-dom
+ - npm i -D @testing-library/jest-dom
+
+
+Note:
+.js or .ts file extensions in the __test__ folder, starts running tests.
+
+or 
+
+Header.test.js
+Header.test.ts
+Header.spec.js
+Header.spec.ts
+
+are the files, when running npm test, it will start running tests.
+
+Note: Whenever we're testing UI component inside React, we need to render that component into the 
+Js DOM first.
