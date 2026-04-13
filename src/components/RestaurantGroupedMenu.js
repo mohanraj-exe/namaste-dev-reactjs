@@ -6,13 +6,17 @@ const RestaurantGroupedMenu = ({ data, isActive, onShow }) => {
   return (
     <div className="grouped-menu-card">
       <span className="accordion-span" onClick={onShow}>
-        <h2 id="card-title">{data.card.card.title}</h2>
+        <h2 id="card-title">{`${data?.title} (${data?.itemCards.length})`}</h2>
         <span>⬇️</span>
       </span>
 
-      {isActive ? data.card.card.itemCards?.map((item) => (
-        <RestaurantGroupedMenuItemList key={item.card.info.id} data={item} />
-      )) : <></>}
+      {isActive ? (
+        data?.itemCards?.map((item) => (
+          <RestaurantGroupedMenuItemList key={item.card.info.id} data={item} />
+        ))
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

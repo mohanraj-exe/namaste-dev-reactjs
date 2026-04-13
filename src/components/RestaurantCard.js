@@ -9,7 +9,7 @@ const RestaurantCard = (props) => {
   // console.log(loggedInUser);
 
   return (
-    <div className="restaurant-card">
+    <div className="restaurant-card" data-testid="resCard">
       <div className="restaurant-logo-container">
         <img
           id="restaurant-logo"

@@ -12,6 +12,7 @@ const Body = () => {
   const [searchInput, setSearchInput] = useState("");
   const [restaurantState, setRestaurantState] = useState([]);
   const [filteredRestaurantState, setFilteredRestaurantState] = useState([]);
+  const [topRatedButtonClicked, setTopRatedButtonClicked] = useState(false);
 
   // customHook
   const onlineStatus = useOnlineStatus();
@@ -33,8 +34,26 @@ const Body = () => {
     });
 
     setFilteredRestaurantState(() =>
-      searchInput ? filtered : restaurantState,
+      searchInput ? filtered : restaurantState
     );
+  };
+
+  const onClickHandlerTopRated = () => {
+    // console.log(e.target.value);
+
+    const filtered = filteredRestaurantState?.filter(
+      ({ avgRating }) => avgRating >= 4.5,
+    );
+
+    setFilteredRestaurantState(filtered);
+    setTopRatedButtonClicked(true);
+  };
+
+  const onClickHandlerTopRatedClear = () => {
+    // console.log(e.target.value);
+
+    setFilteredRestaurantState(restaurantState);
+    setTopRatedButtonClicked(false);
   };
 
   useEffect(() => {
@@ -64,6 +83,10 @@ const Body = () => {
     );
   }
 
+  // useEffect(() => {
+  //   console.log(filteredRestaurantState);
+  // }, [filteredRestaurantState]);
+
   return restaurantState?.length === 0 ? (
     <ShimmerUI />
   ) : (
@@ -73,11 +96,26 @@ const Body = () => {
           <input
             name="search"
             type="search"
+            data-testid="searchInput"
             value={searchInput}
             placeholder="Search food/restaurant name..."
             onChange={onChangeHandler}
           />
           <button onClick={onClickHandler}>Search</button>
+        </span>
+
+        <span>
+          <button onClick={onClickHandlerTopRated}>
+            Top Rated restaurants
+          </button>
+
+          {topRatedButtonClicked ? (
+            <button className="clear-btn" onClick={onClickHandlerTopRatedClear}>
+              Clear
+            </button>
+          ) : (
+            <></>
+          )}
         </span>
 
         {/* Demo feature - Live edit context value */}

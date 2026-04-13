@@ -9,16 +9,18 @@ const RestaurantMenu = () => {
   const { resTitle, groupedMenu } = useRestaurantMenu();
   const [activeIndex, setActiveIndex] = useState(0);
 
+  // console.log(resTitle, groupedMenu);
+
   return groupedMenu?.length === 0 ? (
     <ShimmerUI />
   ) : (
       <div className="body restaurant-menu">
-        <h1 id="title">{resTitle}</h1>
+        <h1 data-testid="restaurantName" id="title">{resTitle}</h1>
 
         {groupedMenu?.map((group, index) => (
           <RestaurantGroupedMenu
-            key={group.card.card.categoryId}
-            data={group}
+            key={group?.card?.card?.categoryId}
+            data={group?.card?.card}
             isActive={activeIndex === index}
             onShow={() => setActiveIndex(index)}
           />

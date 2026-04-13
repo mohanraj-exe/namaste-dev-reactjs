@@ -1,4 +1,5 @@
 import { useState } from "react";
+// import logo from "url:../assets/logo.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { useContext } from "react";
@@ -15,6 +16,9 @@ const Header = () => {
   return (
     <div className="header">
       <span className="logo-title">
+        {/* <Link to={"/"}>
+          <img id="logo" alt="logo" src={logo} />
+        </Link> */}
         <h2>Food order app</h2>
       </span>
 

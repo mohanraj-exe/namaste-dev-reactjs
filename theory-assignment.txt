@@ -1,0 +1,38 @@
+#01. What are different types for testing?
+ - Manual testing: Testing the functionality that we have
+developed. E.g → we have developed a search bar, manual
+testing is checking the search bar manually by typing in it and searching the
+query.
+
+ - Automatic testing: We can write the test cases for testing
+the functionality. It includes 
+  1. Unit testing : Write test cases for the specific part
+(isolated components)
+  2. Integration testing: writing testcases for the components
+that are connected like menu page and cart page are
+connected.
+  3. End-to-end testing: writing testcases from user enters
+into the website to user leaves the website
+
+#03. Enzyme and React Testing Library (RTL) are both popular utilities for testing React components, 
+but they operate on fundamentally different philosophies. 
+While Enzyme was the industry standard for years, 
+React Testing Library is now the officially recommended tool for modern React applications. 
+
+Enzyme: 
+Implementation-focused: Tests how a component is built (state, props, internal methods).
+Supports Shallow Rendering (renders only the top-level component) and Full DOM rendering
+
+React Testing Library (RTL):
+User-focused: Tests what the user sees and interacts with (DOM nodes, text, labels).
+Always performs Full DOM rendering to simulate a real browser environment.
+
+#04. What is Jest and why do we use it?
+Jest is a Javascript testing framework designed to ensure correctness of any Javascript
+codebase. 
+
+It creates a test environment
+ - Running tests: Finding files and executing them in the command line.
+ - Assertions: using expect() to verify code outcomes.
+ - Mocking: Simulating modules or functions with jest.fn() or jest.mock()
+ - Code Coverage: Generating reports on how much code is tested.

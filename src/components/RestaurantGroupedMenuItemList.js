@@ -11,7 +11,9 @@ const RestaurantGroupedMenuItemList = ({ data }) => {
   }
 
   return (
-    <div className="food-item">
+    <div
+      data-testid="foodItems"
+      className="food-item">
       <span className="left">
         <h3 id="title">{data.card.info.name}</h3>
         <h4>

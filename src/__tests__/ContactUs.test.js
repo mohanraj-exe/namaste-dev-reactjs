@@ -5,6 +5,23 @@ import "@testing-library/jest-dom";
 // To group multiple test cases under one name.
 describe("Contact us page test cases", () => {
 
+  // Demo
+  // beforeAll(() => {
+  //   console.log("Before all");
+  // });
+
+  // beforeEach(() => {
+  //   console.log("Before each");
+  // });
+
+  // afterEach(() => {
+  //   console.log("After each");
+  // });
+
+  // afterAll(() => {
+  //   console.log("After all");
+  // });
+
   // can use 'it' or 'test' 
   it("should load contact us component", () => {
     render(<ContactUs />); // renders contact component to the JS dom. 
@@ -33,9 +50,11 @@ describe("Contact us page test cases", () => {
     render(<ContactUs />);
 
     const textboxes = screen.getAllByRole("textbox");
-    console.log(textboxes); // It is a 'React' element/React fiber/Virtual DOM object
+    // console.log(textboxes); // It is a 'React' element/React fiber/Virtual DOM object
     // console.log(textboxes.length); // 2
     
     expect(textboxes.length).toBe(3);
+    // const result = expect();
+    // console.log(result);
   });
 });

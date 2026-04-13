@@ -1,0 +1,64 @@
+{
+    "id": "637952",
+    "name": "Amma Mess Chettinadu Unavagam",
+    "cloudinaryImageId": "hhuccbzzi7wtfkv1vu8o",
+    "locality": "Thiruchengode Road ",
+    "areaName": "RP pudur",
+    "costForTwo": "₹200 for two",
+    "cuisines": [
+        "South Indian",
+        "Biryani",
+        "Chettinad"
+    ],
+    "avgRating": 4.5,
+    "parentId": "385075",
+    "avgRatingString": "4.5",
+    "totalRatingsString": "610",
+    "sla": {
+        "deliveryTime": 39,
+        "lastMileTravel": 10.7,
+        "serviceability": "SERVICEABLE",
+        "slaString": "35-40 mins",
+        "lastMileTravelString": "10.7 km",
+        "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+        "nextCloseTime": "2026-03-14 23:00:00",
+        "opened": true
+    },
+    "badges": {},
+    "isOpen": true,
+    "aggregatedDiscountInfoV2": {},
+    "type": "F",
+    "badgesV2": {
+        "entityBadges": {
+            "imageBased": {},
+            "textBased": {},
+            "textExtendedBadges": {}
+        }
+    },
+    "orderabilityCommunication": {
+        "title": {},
+        "subTitle": {},
+        "message": {},
+        "customIcon": {}
+    },
+    "differentiatedUi": {
+        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        "differentiatedUiMediaDetails": {
+            "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+            "lottie": {},
+            "video": {}
+        }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {},
+    "externalRatings": {
+        "aggregatedRating": {
+            "rating": "--"
+        }
+    },
+    "promoted": true,
+    "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+}

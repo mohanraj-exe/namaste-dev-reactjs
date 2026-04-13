@@ -28,9 +28,9 @@ const useRestaurantMenu = () => {
 
         setGroupedMenu(menu);
       } catch (err) {
-        throw new err;
+        console.error(err);
       }
-    });
+    }, 0);
   }, []);
 
   return { resTitle, groupedMenu };

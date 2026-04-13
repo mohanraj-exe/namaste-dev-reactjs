@@ -24,14 +24,19 @@ body {
 }
 
 .search-input-container {
+  display: flex;
   text-align: center;
+  justify-content: space-between;
+  align-items: center;
   margin: 15px 0;
+  gap: 10px;
+  /* border: 1px solid green; */
 }
 
 .search-input-container > * {
   display: flex;
-  justify-content: center;
   gap: 10px;
+  /* border: 1px solid red; */
 }
 
 .search-input-container input {
@@ -45,6 +50,17 @@ body {
   color: white;
   font-size: 16px;
   padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.search-input-container .clear-btn {
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 3px 6px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
