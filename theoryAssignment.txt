@@ -1,0 +1,43 @@
+#01. What is prop drilling?
+It is a concept of passing props from one component to another(deep-level),
+it means passing from one component to another, it passes deep-down until it truely wants.
+
+#02. What is lifting the state up?
+It is a concept of lifting 'React state variable and setter function' to the closest ancestor/parent
+component, in order to control multiple child components with the same state variable.
+
+#03. What is Context Provider and Context Consumer?
+The context (it can be any Js value) created with createContext function is made available
+across the app/to a specific component by using Context Provider component provided by 'React',
+Context Consumer is a pre-built react component using that to 
+access the provided context value for the component.
+
+#04. If you don’t pass a value to the provider does it take the default value?
+
+// Scenario 1:
+    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+      <div className="app-layout">
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
+
+When passing value to the provider, it overrides the 'Default' value provided by the createContext.
+
+// Scenario 2:
+    <UserContext.Provider>
+      <div className="app-layout">
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
+
+When not passing value to the provider, value is 'undefined', it throws error in the app.
+
+// Scenario 3:
+    <div className="app-layout">
+        <Header />
+        <Outlet />
+    </div>
+
+When provider is absent, it takes the 'Default' value provided by the createContext.
