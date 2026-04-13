@@ -1,0 +1,154 @@
+#01. useContext vs Redux?
+Both are used for state management in react applications, but they serve different purposes and 
+use cases.
+
+useContext:
+ - It is a built-in React hook.
+ - Primary use to avoid prop-drilling.
+ - Triggers re-render for all Consumers when value changes.
+ - Complexity: Simple, Minimal boilerplate.
+ - Debugging: Limited to ReactDev tools
+ - Side effects: Done via useEffect.
+
+Redux:
+ - External library.
+ - Managing complex global state.
+ - Components only re-render if the specific slice of state they use changes.
+ - Complexity: High, Requires actions, reducers and store setup.
+ - Debugging: Powerful time-travel Debugging via Redux DevTools.
+ - Middleware support like (e.g., Thunk)
+
+#02. Advantages of using Redux Toolkit over Redux:
+Redux Toolkit is a set of utility functions and abstractions that simplifies and
+streamlines the process of working with Redux. It is designed to address some of
+the common pain points and boilerplate associated with using plain Redux.
+
+Some of the Advantages of using Redux Toolkit over plain Redux:
+ - Less boilerplate code.
+ - Easier Async operations.
+ - Simpler store setup.
+ - Built-in dev tools support.
+ - Handles immutability for you.
+ - Backward compatibility: If you already have a Redux app, you can slowly transition to Redux toolkit 
+ without rewriting everything. It is designed to compatible with your existing Redux code.
+ - Faster development - With Redux toolkit, you can get things done more quickly. You spend less time
+ setting up and configuring Redux and more time focusing on building features for your app.
+
+#03. What is Dispatch?
+ - Dispatch is a function provided by the Redux store. We use it send actions to the redux store.
+ - An action is a plain Javascript object that describes what should change in the application's state.
+
+import { useDispatch } from 'react-redux';
+
+const MyComponent = () => {
+    const dispatch = useDispatch();
+
+    const handleButtonClick = () => {
+        dispatch({ type: 'INCREMENT' });
+    };
+
+    return (
+        <button onClick={handleButtonClick}>
+            Increment Count
+        </button>
+    );
+}; 
+
+In this example, the useDispatch hook from react-redux gives us access to the
+dispatch function, which we then use to send an action to the Redux store when
+the button is clicked. This action will be processed by the reducer, updating the
+state accordingly.
+
+#04. Explain Reducer
+Instead of creating a standalone reducer function, we can use createSlice to define 
+a 'slice' of your redux store.
+
+It is a function that is mapped to action, it is called/invoked based on specific action, it updates
+the state, reducer logic is written inside createSlice.
+
+A slice includes,
+ - actions
+ - reducer
+ - initial state.
+
+import { createSlice } from '@reduxjs/toolkit';
+
+const counterSlice = createSlice({
+    name: 'counter',
+    initialState: { value: 0 },
+    reducers: {
+        increment: (state) => {
+            state.value += 1;
+        },
+        decrement: (state) => {
+            state.value -= 1;
+        },
+    }
+});
+
+// Extracting actions and reducers from the slice.
+export const { increment, decrement } = counterSlice.actions;
+export default counterSlice.reducer;
+
+#05. Explain Slice
+In Redux Toolkit, a slice is a collection of Redux-related code, including reducer logic and actions, 
+that corresponds to a specific piece of the application state.
+
+Slices are created using the createSlice utility function provided by Redux Toolkit. The
+primary purpose of slices is to encapsulate the logic related to a specific part of the state,
+making the code more modular and easier to manage.
+
+import { createSlice } from '@reduxjs/toolkit';
+
+const counterSlice = createSlice({
+    name: 'counter',
+    initialState: { value: 0 },
+    reducers: {
+        increment: (state) => {
+            state.value += 1;
+        },
+        decrement: (state) => {
+            state.value -= 1;
+        },
+    }
+});
+
+Creating a Slice: The createSlice function takes an options object with the
+following properties
+ - name (string) - A string that identifies the slice. This is used as the prefix for the
+   generated action types.
+
+ - initialState (any) - The initial state value for the slice. This is the starting point for
+   your state before any actions are dispatched.
+
+ - reducers (object) - An object where each key-value pair represents a reducer function.
+  1. The keys are the names of the actions, and the values are the corresponding reducer logic.
+
+Output: The createSlice function returns an object with the following
+properties
+
+ - name (string) - The name of the slice.
+ - reducer (function) - The reducer function
+generated based on the provided reducers. This is the function you use in your
+store configuration.
+ - actions (object) - An object containing the action creators for
+each defined reducer. These action creators can be directly used to dispatch
+actions.
+
+#06. Explain Selector
+In Redux Toolkit, a selector is a function that extracts specific pieces of data from the Redux store. 
+It allows you to compute derived data from the store state and efficiently access
+specific parts of the state tree.
+
+useSelector is a hook provided by react-redux library, if a component is subscribed to a specific slice,
+state changes will get reflected here.
+
+#07. Explain createSlice and the configuration it
+takes?
+
+ - createSlice is a utility function provided by Redux Toolkit that
+simplifies the process of creating Redux slices. 
+ - A Redux slice is a piece of the Redux store that includes a set of actions, a reducer, and
+an initial state. 
+ - The createSlice function helps reduce boilerplate code associated with defining actions and the
+reducer for a specific slice of your Redux store.
