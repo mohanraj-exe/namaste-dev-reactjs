@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "url:../assets/logo.png";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { useContext } from "react";
-import UserContext from "../utils/userContext";
+import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 
 const Header = () => {
