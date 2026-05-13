@@ -10,7 +10,7 @@ import ContactUs from "./src/components/ContactUs";
 import Error from "./src/components/Error";
 import RestaurantMenu from "./src/components/RestaurantMenu";
 import ShimmerUI from "./src/components/ShimmerUI";
-import UserContext from "./src/utils/userContext";
+import UserContext from "./src/utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./src/utils/appStore";
 import Cart from "./src/components/Cart";
@@ -30,18 +30,9 @@ const AppLayout = () => {
   const { loggedInUser } = useContext(UserContext);
   const [userName, setUserName] = useState(loggedInUser);
 
-  useEffect(() => {
-    const data = { name: "Mohanraj S" };
-    setUserName(data.name);
-  }, []);
-
-  // useEffect(() => {
-  //   console.log(userName);
-  // }, [userName]);
-
   return (
     <Provider store={appStore}>
-    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+    <UserContext.Provider value={{ loggedInUser: userName }}>
       <div className="app-layout">
         <Header />
         <Outlet />
